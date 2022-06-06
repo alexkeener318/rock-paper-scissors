@@ -1,4 +1,4 @@
-function computerPlay {
+function computerPlay() {
     let computerNum = Math.floor(Math.random() *3);
     
     if(computerNum === 0){
@@ -12,4 +12,3 @@ function computerPlay {
     }
 }
 
-console.log(computerPlay());
