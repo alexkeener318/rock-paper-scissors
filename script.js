@@ -51,10 +51,8 @@ function playRound(playerSelection, computerSelection){
 function game(e) {
     playerSelection = e.target.className;
     computerSelection = computerPlay();
-    console.log(typeof playerSelection);
-    console.log("PLAYER: " + playerSelection + "   COMPUTER: " + computerSelection);
+
     let result = playRound(playerSelection, computerSelection);
-    console.log(result);
     if(result === "The computer wins!"){
         computerScore++;
     }
@@ -80,9 +78,8 @@ let computerScore = 0;
 
 const changeResults = document.querySelector(".results");
 const buttonSelection = document.querySelectorAll("button");
-console.log(buttonSelection);
+
 buttonSelection.forEach(button => {
-    console.log(button);
     button.addEventListener("click", game);
 });
 
