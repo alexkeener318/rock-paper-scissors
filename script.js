@@ -48,7 +48,7 @@ function playRound(playerSelection, computerSelection){
     }
 }
 
-function getResult(e) {
+function game(e) {
     playerSelection = e.target.className;
     computerSelection = computerPlay();
     console.log(typeof playerSelection);
@@ -60,6 +60,14 @@ function getResult(e) {
     }
     else if(result === "The player wins!"){
         playerScore++;
+    }
+
+    if(computerScore >= 5 ){
+        changeResults.textContent = "COMPUTER WINS";
+        return;
+    }else if(playerScore >= 5){
+        changeResults.textContent = "PLAYER WINS";
+        return;
     }
     changeResults.textContent = "Player: " + playerScore + " Computer: " + computerScore;
 }
@@ -75,41 +83,12 @@ const buttonSelection = document.querySelectorAll("button");
 console.log(buttonSelection);
 buttonSelection.forEach(button => {
     console.log(button);
-    button.addEventListener("click", getResult);
+    button.addEventListener("click", game);
 });
 
 
 
 
-
-
-// function game() {
-//     let computerScore = 0;
-//     let playerScore = 0;
-//     let result;
-//     for(let i = 0; i < 5; i++){
-//         let computerSelection = computerPlay();
-//         let playerSelection = prompt("Choose rock paper or scissors: ");
-//         result = playRound(playerSelection, computerSelection);
-//         console.log(result);
-
-        // if(result === "The computer wins!"){
-        //     computerScore++;
-        // }
-        // else if(result === "The player wins!"){
-        //     playerScore++;
-        // }
-//     }
-//     if(computerScore > playerScore){
-//         console.log("Sorry brother, but you've been beaten by the machine");
-//     }
-//     else if( playerScore > computerScore){
-//         console.log("Congrats! You did the impossible and beat the machine");
-//     }
-//     else {
-//         console.log("Looks like no one was able to pull ahead. You tied!");
-//     }
-// }
 
 
 
